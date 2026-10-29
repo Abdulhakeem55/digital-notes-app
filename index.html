@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>NoteSpace | Digital Notes Application</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>📝 NoteSpace</h2>
+            <p>Your Thoughts, Organized.</p>
+        </div>
+
+        <nav class="sidebar-menu">
+
+            <button class="menu-item active"
+                    data-filter="all">
+                📚 All Notes
+            </button>
+
+            <button class="menu-item"
+                    data-filter="pinned">
+                📌 Pinned Notes
+            </button>
+
+            <h4>Categories</h4>
+
+            <button class="menu-item"
+                    data-filter="Personal">
+                👤 Personal
+            </button>
+
+            <button class="menu-item"
+                    data-filter="Work">
+                💼 Work
+            </button>
+
+            <button class="menu-item"
+                    data-filter="School">
+                🎓 School
+            </button>
+
+            <button class="menu-item"
+                    data-filter="Ideas">
+                💡 Ideas
+            </button>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <button id="themeToggle">
+                🌙 Dark Mode
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <!-- HEADER -->
+
+        <header class="header">
+
+            <div>
+                <h1>My Notes</h1>
+
+                <p>
+                    Capture your thoughts and stay organized.
+                </p>
+            </div>
+
+            <button class="add-note-btn"
+                    id="addNoteBtn">
+                + New Note
+            </button>
+
+        </header>
+
+
+        <!-- SEARCH -->
+
+        <section class="search-section">
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search your notes..."
+                aria-label="Search notes"
+            >
+
+        </section>
+
+
+        <!-- STATISTICS -->
+
+        <section class="stats-container">
+
+            <div class="stat-card">
+
+                <h3>Total Notes</h3>
+
+                <h2 id="totalNotes">0</h2>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h3>Pinned Notes</h3>
+
+                <h2 id="pinnedNotes">0</h2>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h3>Categories Used</h3>
+
+                <h2 id="totalCategories">0</h2>
+
+            </div>
+
+        </section>
+
+
+        <!-- NOTES SECTION -->
+
+        <section class="notes-section">
+
+            <div class="section-heading">
+
+                <h2 id="notesHeading">
+                    All Notes
+                </h2>
+
+            </div>
+
+            <div class="notes-grid"
+                 id="notesContainer">
+
+                <!-- Notes generated using JavaScript -->
+
+            </div>
+
+            <div class="empty-state"
+                 id="emptyState">
+
+                <h2>📝 No Notes Yet</h2>
+
+                <p>
+                    Start organizing your thoughts
+                    by creating your first note.
+                </p>
+
+                <button id="emptyAddBtn">
+                    Create Note
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer class="footer">
+
+            <p>
+                Developed by
+                <strong>
+                    Momoh Onoruoiza Abdulhakeem
+                </strong>
+            </p>
+
+            <p>
+                Matric No: 2025/HND/SWD/091
+            </p>
+
+            <p>
+                SWD 417 Assignment
+            </p>
+
+            <p>
+                &copy; 2026 NoteSpace.
+                All Rights Reserved.
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <!-- NOTE MODAL -->
+
+    <div class="modal"
+         id="noteModal"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="modalTitle"
+         hidden>
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h2 id="modalTitle">
+                    Create New Note
+                </h2>
+
+                <button
+                    class="close-btn"
+                    id="closeModal"
+                    aria-label="Close note editor">
+                    &times;
+                </button>
+
+            </div>
+
+            <form id="noteForm">
+
+                <input
+                    type="hidden"
+                    id="noteId"
+                >
+
+                <label for="noteTitle">
+                    Note Title
+                </label>
+
+                <input
+                    type="text"
+                    id="noteTitle"
+                    placeholder="Enter note title"
+                    maxlength="100"
+                    required
+                >
+
+                <label for="noteCategory">
+                    Category
+                </label>
+
+                <select id="noteCategory">
+
+                    <option value="Personal">
+                        Personal
+                    </option>
+
+                    <option value="Work">
+                        Work
+                    </option>
+
+                    <option value="School">
+                        School
+                    </option>
+
+                    <option value="Ideas">
+                        Ideas
+                    </option>
+
+                </select>
+
+                <label for="noteContent">
+                    Note Content
+                </label>
+
+                <textarea
+                    id="noteContent"
+                    rows="8"
+                    placeholder="Write your note here..."
+                    required
+                ></textarea>
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        id="cancelBtn">
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="save-btn">
+                        Save Note
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
